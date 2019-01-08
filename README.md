@@ -38,3 +38,28 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkOTg0ZDg5M
 
 基于kafka 发送计费消息，实现网关统一的计费.
 
+
+
+### 插件安装过程
+
+git clone https://github.com/tfnick/jwt-header-rewrite.git
+
+cd jwt-header-rewrite
+
+luarocks install jwt-header-rewrite-1.0-0.rockspec
+
+> setup location check after install
+
+```
+
+/usr/local/share/lua/5.1/kong/plugins/jwt-header-rewrite
+
+```
+
+> 重启kong
+
+kong restart / reload
+
+> 通过Kong Admin Api检查插件是否已经启用
+
+curl 127.0.0.1:8001/plugins/enabled 2>/dev/null |python -m json.tool
