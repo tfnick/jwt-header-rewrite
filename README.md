@@ -63,3 +63,31 @@ kong restart / reload
 > 通过Kong Admin Api检查插件是否已经启用
 
 curl 127.0.0.1:8001/plugins/enabled 2>/dev/null |python -m json.tool
+
+
+> 测试插件是否起作用
+
+```
+curl -H "Content-TOKEN:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkMlN6emVoWWM1ODdxM1ZlWjVlU2FaTFdwSXhOaUFUbSIsImV4cCI6MTU0NzAyNzg4M30.hEZweYlX8nG4Vm5AFWBg-Bqg-G3rp33VjgsqCDLFsQs" 192.168.1.195:8000/jwt
+
+```
+
+> kong日志目录
+
+```
+
+/usr/local/kong/logs
+
+```
+
+> kong jwt plugin return
+
+```
+{"exp":"token expired"}
+```
+
+服务端需要设置一个更长的token有效期
+```
+{"exp":"exceeds maximum allowed expiration"}
+```
+
