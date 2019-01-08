@@ -3,7 +3,7 @@ version = "1.0-0"
 local pluginName = "jwt-header-rewrite"
 
 source = {
-  url = "git@github.com:tfnick/jwt-header-rewrite.git",
+  url = "git://github.com:tfnick/jwt-header-rewrite.git",
 }
 
 description = {
