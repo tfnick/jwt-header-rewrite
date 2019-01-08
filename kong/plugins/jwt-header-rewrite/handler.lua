@@ -27,8 +27,8 @@ end
 
 -- plugin init
 
-function TokenAuthHandler:new()
-    TokenAuthHandler.super.new(self, "jwt-header-rewrite")
+function JwtHeaderHandler:new()
+    JwtHeaderHandler.super.new(self, "jwt-header-rewrite")
 end
 
 -- plugin handle http request

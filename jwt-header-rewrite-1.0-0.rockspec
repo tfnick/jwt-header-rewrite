@@ -16,7 +16,7 @@ dependencies = {
 build = {
   type = "builtin",
   modules = {
-    ["kong.plugins.jwt-header-rewrite.handler"] = "handler.lua",
-    ["kong.plugins.jwt-header-rewrite.schema"]  = "schema.lua"
+    ["kong.plugins.jwt-header-rewrite.handler"] = "kong/plugins/jwt-header-rewrite/handler.lua",
+    ["kong.plugins.jwt-header-rewrite.schema"]  = "kong/plugins/jwt-header-rewrite/schema.lua"
   }
 }
