@@ -23,7 +23,6 @@ end
 
 function JwtHeaderHandler:access(conf)
     JwtHeaderHandler.super.access(self)
-    ngx.log(conf.open_debug)
     local token, err = extract_custom_header(ngx.req)
     if not token then
         if conf.open_debug == 1 then

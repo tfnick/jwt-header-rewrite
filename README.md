@@ -89,5 +89,20 @@ curl -H "Content-TOKEN:eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJkMlN6emVo
 服务端需要设置一个更长的token有效期
 ```
 {"exp":"exceeds maximum allowed expiration"}
+
+```
+
+header 传递
+
+```
+
+Upstream Headers
+When a JWT is valid, a Consumer has been authenticated, the plugin will append some headers to the request before proxying it to the upstream service, so that you can identify the Consumer in your code:
+
+X-Consumer-ID, the ID of the Consumer on Kong
+X-Consumer-Custom-ID, the custom_id of the Consumer (if set)
+X-Consumer-Username, the username of the Consumer (if set)
+X-Anonymous-Consumer, will be set to true when authentication failed, and the ‘anonymous’ consumer was set instead.
+
 ```
 
