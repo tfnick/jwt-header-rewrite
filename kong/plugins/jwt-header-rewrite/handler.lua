@@ -26,13 +26,13 @@ function JwtHeaderHandler:access(conf)
     local token, err = extract_custom_header(ngx.req)
     if not token then
         if conf.open_debug == 1 then
-            ngx.log(ngx.ERR,"Content-TOKEN header","not found")
+            ngx.log(ngx.NOTICE,"Content-TOKEN header"," not found - it's ok if the route is not under jwt auth")
         end
         return
     else
         req_set_header("Authorization"," Bearer "..token)
         if conf.open_debug == 1 then
-            ngx.log(ngx.ERR,"header Content-TOKEN convert to:"," Bearer "..token)
+            ngx.log(ngx.NOTICE,"Header Content-TOKEN convert to:"," Bearer "..token)
         end
     end
 end
